@@ -1,15 +1,7 @@
 #!/bin/bash
 set -e
 
-machine=$(uname)
-if [ "${machine}" = "Darwin" ]
-then
-  READLINK=greadlink
-else
-  READLINK=readlink
-fi
-
-SCRIPT_DIR="$(dirname "$($READLINK -f "$0")")"
+SCRIPT_DIR="$(dirname "$(readlink -f "$0")")"
 PROJECT_ROOT="$(dirname "$SCRIPT_DIR")"
 
 pylint "${PROJECT_ROOT}"/bqdataprofiler

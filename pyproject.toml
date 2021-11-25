@@ -9,12 +9,16 @@ license = "MIT"
 python = "3.9.9"
 google-cloud-bigquery = "^2.30.1"
 typer = "^0.4.0"
+pydantic = "^1.8.2"
+PyYAML = "^6.0"
+loguru = "^0.5.3"
 
 [tool.poetry.dev-dependencies]
 yapf = "^0.31.0"
 pylint = "^2.11.1"
 isort = "^5.10.1"
 mypy = "^0.910"
+types-PyYAML = "^6.0.1"
 
 [tool.yapf]
 based_on_style = "google"
@@ -38,7 +42,7 @@ min-similarity-lines = 10
 max-line-length = 120
 
 [tool.pylint."MESSAGES CONTROL"]
-disable = "R0201, R0402, R0903, W0511"
+disable = "R0201, R0402, R0903, W0511, W0703, C0114"
 
 [tool.mypy]
 ignore_missing_imports = true
