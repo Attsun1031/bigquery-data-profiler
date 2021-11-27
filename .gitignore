@@ -131,3 +131,6 @@ dmypy.json
 # sample
 setting.yaml
 out
+
+# poetry
+poetry.lock
