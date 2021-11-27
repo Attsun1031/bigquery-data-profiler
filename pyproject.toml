@@ -3,7 +3,32 @@ name = "bigquery-data-profiler"
 version = "0.0.1"
 description = "Data profiler for BigQuery"
 authors = ["Attsun1031"]
+readme = "README.md"
 license = "MIT"
+homepage = "https://github.com/Attsun1031/bigquery-data-profiler"
+repository = "https://github.com/Attsun1031/bigquery-data-profiler"
+documentation = "https://github.com/Attsun1031/bigquery-data-profiler"
+classifiers = [
+    "Environment :: Console",
+    "Intended Audience :: Developers",
+    "Intended Audience :: End Users/Desktop",
+    "Intended Audience :: Information Technology",
+    "Intended Audience :: System Administrators",
+    "Operating System :: OS Independent",
+    "Programming Language :: Python",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3 :: Only",
+    "Programming Language :: Python :: 3.9",
+    "Topic :: Software Development :: Libraries :: Application Frameworks",
+    "Topic :: Software Development :: Libraries :: Python Modules",
+    "Topic :: Software Development :: Libraries",
+    "Topic :: Software Development",
+    "Topic :: Terminals",
+    "Topic :: Utilities",
+    "Typing :: Typed",
+    "Development Status :: 3 - Alpha",
+    "License :: OSI Approved :: MIT License"
+]
 
 [tool.poetry.dependencies]
 python = "3.9.9"
@@ -48,6 +73,9 @@ disable = "R0201, R0402, R0903, W0511, W0703, C0114"
 [tool.mypy]
 ignore_missing_imports = true
 follow_imports = "skip"
+
+[tool.poetry.scripts]
+typer = "bqdataprofiler.main:main"
 
 [build-system]
 requires = ["poetry-core>=1.0.0"]

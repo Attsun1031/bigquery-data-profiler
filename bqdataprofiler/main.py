@@ -56,5 +56,12 @@ def profile(config: Path = typer.Option(...),
     logger.info("End bigquery-data-profiler")
 
 
-if __name__ == '__main__':
+def main():
+    """
+    Main function from command line
+    """
     app()
+
+
+if __name__ == '__main__':
+    main()
