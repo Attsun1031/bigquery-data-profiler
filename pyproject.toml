@@ -31,7 +31,7 @@ classifiers = [
 ]
 
 [tool.poetry.dependencies]
-python = "3.9.9"
+python = "^3.9"
 google-cloud-bigquery = "^2.30.1"
 typer = "^0.4.0"
 pydantic = "^1.8.2"
