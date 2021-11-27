@@ -29,6 +29,9 @@ classifiers = [
     "Development Status :: 3 - Alpha",
     "License :: OSI Approved :: MIT License"
 ]
+packages = [
+    { include = "bqdataprofiler" }
+]
 
 [tool.poetry.dependencies]
 python = "^3.9"
