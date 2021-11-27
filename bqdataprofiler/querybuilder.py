@@ -6,6 +6,18 @@ from google.cloud import bigquery
 from bqdataprofiler.models.setting import ProjectSetting
 
 
+def column_name_to_metric_target(col_name: str) -> tuple[str, Optional[str]]:
+    """
+    Return (metric_name, column_name) from column name that build by this class.
+    """
+    parts = col_name.split("__")
+    if parts[0] == "table_metric":
+        return parts[1], None
+    if parts[0] == "column_metric":
+        return parts[1], parts[2]
+    raise ValueError(f"col_name: {col_name} may not be built by this class")
+
+
 def python_type_to_bigquery_type(tp: type) -> str:
     """
     Convert python type to bigquery type name
@@ -124,15 +136,3 @@ class BigQueryProfileQueryBuilder:
         if col_type == "BYTES":
             return f'COUNTIF({col_name} = CAST("" AS BYTES))'
         raise ValueError(f"Cannot get zero_or_empty value. col_name: {col_name} col_type: {col_type}")
-
-    @classmethod
-    def column_name_to_metric_target(cls, col_name: str) -> tuple[str, Optional[str]]:
-        """
-        Return (metric_name, column_name) from column name that build by this class.
-        """
-        parts = col_name.split("__")
-        if parts[0] == "table_metric":
-            return parts[1], None
-        if parts[0] == "column_metric":
-            return parts[1], parts[2]
-        raise ValueError(f"col_name: {col_name} may not be built by this class")

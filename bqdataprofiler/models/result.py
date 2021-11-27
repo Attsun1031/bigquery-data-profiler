@@ -3,7 +3,7 @@ from typing import Optional
 
 from pydantic import BaseModel
 
-from bqdataprofiler.models.error import ErrorCollection
+from bqdataprofiler.models.error import Error
 
 
 class Metric(BaseModel):
@@ -29,5 +29,5 @@ class ProfilingResult(BaseModel):
     duration_sec: int = 0
     run_id: str
     metrics: list[Metric] = []
-    errors: Optional[ErrorCollection] = None
+    errors: list[Error] = []
     total_bytes_processed: int = 0

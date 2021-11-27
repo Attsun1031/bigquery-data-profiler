@@ -5,6 +5,7 @@ from pathlib import Path
 import typer
 from loguru import logger
 
+from bqdataprofiler import __version__
 from bqdataprofiler.models.result import ProfilingResult
 from bqdataprofiler.models.setting import load_setting_from_yaml
 from bqdataprofiler.profiler import run_profile
@@ -14,13 +15,16 @@ app = typer.Typer()
 
 @app.command()
 def version():
-    # TODO: Not work.
-    import pkg_resources
-    print(pkg_resources.get_distribution('bigquery-data-profiler').version)
+    """
+    Show current version
+    """
+    print(__version__)
 
 
 @app.command()
-def profile(config: Path = typer.Option(...), outdir: Path = typer.Option(None), dry_run: bool = typer.Option(False),
+def profile(config: Path = typer.Option(...),
+            outdir: Path = typer.Option(None),
+            dry_run: bool = typer.Option(False),
             log_error: bool = typer.Option(False)):
     """
     Run profile

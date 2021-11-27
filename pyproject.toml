@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "bigquery-data-profiler"
-version = "0.1.0"
+version = "0.0.1"
 description = "Data profiler for BigQuery"
 authors = ["Attsun1031"]
 license = "MIT"
@@ -19,6 +19,7 @@ pylint = "^2.11.1"
 isort = "^5.10.1"
 mypy = "^0.910"
 types-PyYAML = "^6.0.1"
+pytest = "^6.2.5"
 
 [tool.yapf]
 based_on_style = "google"
