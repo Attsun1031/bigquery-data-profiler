@@ -78,7 +78,7 @@ ignore_missing_imports = true
 follow_imports = "skip"
 
 [tool.poetry.scripts]
-typer = "bqdataprofiler.main:main"
+bqdf = "bqdataprofiler.main:main"
 
 [build-system]
 requires = ["poetry-core>=1.0.0"]
